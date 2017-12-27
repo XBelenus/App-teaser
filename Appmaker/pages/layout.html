@@ -1,0 +1,212 @@
+<template>
+        <div class="_">B</div>
+</template>
+
+<script>
+    export default {
+      name: ''
+    }
+</script>
+
+<style>
+
+</style>
+
+<!--**************************MODULE TODO: ****************************-->
+<template>
+    <!--**************************A COMPLETER : ****************************-->
+        <div class="todo_list">
+            <label for="addElement">What to do?</label>
+                <textarea name="addElement" id="addElement" cols="30" rows="10"></textarea>
+            <button @click="addElFunc()">ajouter</button>
+            <ul>
+                <li v-for="elem in elementsList">{{ elem }}</li>
+            </ul>
+        </div>
+</template>
+
+<script>
+    export default {
+      name: 'todoList',
+      data: function () {
+        return {
+          elementsList: []
+        }
+      },
+      methods: {
+        addElFunc () {
+          let text = document.querySelector('#addElement').value
+          if (text !== 'null' || text !== 'undefined') {
+            console.log(text)
+            this.elementsList.push(text)
+            console.log(this.elementsList)
+          }
+        }
+      }
+    }
+</script>
+
+<style>
+    .todo_list{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+</style>
+<!--************************** FIN DU MODULE : TODO ****************************-->
+<!--**************************MODULE : Liste AMIS ****************************-->
+<template>
+        <div class="liste_amis">B</div>
+</template>
+
+<script>
+    export default {
+      name: 'listeAmis'
+    }
+</script>
+
+<style>
+
+</style>
+<!--************************** FIN DU MODULE : ListeAmis****************************-->
+<!--**************************MODULE :Identification ****************************-->
+<template>
+        <div class="identification_module">B</div>
+</template>
+
+<script>
+    export default {
+      name: 'identificationModule'
+    }
+</script>
+
+<style>
+
+</style>
+<!--************************** FIN DU MODULE : Identification ****************************-->
+<!--**************************MODULE : PHOTO ****************************-->
+<template>
+        <div class="photos_module">
+            <form action="/" enctype="multipart/form-data" accept="image/*">
+                <input type="file" multiple name="fileuploader" id="fileuploader">
+                <input type="submit" value="envois">
+            </form>
+        </div>
+</template>
+<button></button>
+<script>
+    export default {
+      name: 'photosModule',
+      methods: {
+        handleFile: function(e){
+            console.log('change');
+        }
+      },
+      mounted: function(){
+          let fileinput = document.querySelector('#fileuploader')
+          fileinput.addEventListener('change', handleFile())
+          let wsc = New WebSocket('ws://127.0.0.1:8887');
+          wsc.on('open', function(){
+            console.log('WSC Connecté');
+          })
+      }
+    }
+</script>
+
+<style>
+    .photos_module{
+
+    }
+</style>
+<!--************************** FIN DU MODULE : Photos****************************-->
+<!--**************************MODULE : GEO ****************************-->
+<template>
+        <div class="geo_module">B</div>
+</template>
+
+<script>
+    export default {
+      name: 'geoModule'
+    }
+</script>
+
+<style>
+
+</style>
+<!--************************** FIN DU MODULE : GEO****************************-->
+<!--**************************MODULE : Messagerie ****************************-->
+<template>
+        <div class="messagerie_module">B</div>
+</template>
+
+<script>
+    export default {
+      name: 'messagerieModule'
+    }
+</script>
+
+<style>
+
+</style>
+<!--************************** FIN DU MODULE : Messagerie ****************************-->
+<!--**************************MODULE : Base De Donnée ****************************-->
+<template>
+        <div class="base_dd">B</div>
+</template>
+
+<script>
+    export default {
+      name: 'baseDd'
+    }
+</script>
+
+<style>
+
+</style>
+<!--************************** FIN DU MODULE : Base de données ****************************-->
+<!--**************************MODULE : MiniJeu ****************************-->
+<template>
+        <div class="mini_jeu">B</div>
+</template>
+
+<script>
+    export default {
+      name: 'miniJeu'
+    }
+</script>
+
+<style>
+
+</style>
+<!--************************** FIN DU MODULE : Minijeu ****************************-->
+<!--**************************MODULE : Echange****************************-->
+<template>
+        <div class="echanges_module">B</div>
+</template>
+
+<script>
+    export default {
+      name: 'echangesModule'
+    }
+</script>
+
+<style>
+
+</style>
+<!--************************** FIN DU MODULE : Echanges****************************-->
+<!--************************** MODULE : Script ****************************-->
+<template>
+    <script>
+        console.log('hello world')
+    </script>
+</template>
+
+<script>
+export default {
+  name: 'monscript'
+}
+</script>
+
+<style>
+
+</style>
+<!--************************** FIN DU MODULE : Script ****************************-->

@@ -23,4 +23,4 @@ you can now open your browser and create !!
 
 Have a lot of fun!
 
-from Paris love & passion ! Enjoy !!
+from Paris, love & passion ! Enjoy !!

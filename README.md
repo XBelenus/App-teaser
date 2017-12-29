@@ -11,9 +11,8 @@ cd /appmaker && npm install
 
 npm run dev 
 
-before you open your browser to navigate to  open an other terminal and "cd" into the "backmaker" directory.
+In a new terminal:
 
-in a new terminal:
 cd backmaker
 
 npm install

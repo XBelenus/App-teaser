@@ -21,7 +21,7 @@ node socketserver.js
 
 browse to http://localhost:3000/
 
-you can now open your browser and create !!
+you can now create an app !!
 
 Have a lot of fun!
 

@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "peer": "^0.2.8",
-    "zip-folder": "^1.0.0"
+    "archiver": "^2.1.0",
+    "peer": "^0.2.8"
   }
 }

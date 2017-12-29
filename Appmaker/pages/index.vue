@@ -8,8 +8,6 @@
                 <li v-if="messagerie" data-module-name="messagerie"><a >messageriedufuture</a></li>
                 <li v-if="datas" data-module-name="datas"><a >DATASMODULE</a></li>
                 <li v-if="rtcmodule" data-module-name="rtcmodule"><a >RTC</a></li>
-                <li v-if="sharepos" data-module-name="sharepos"><a >Géolocalisation</a></li>
-                <li v-if="minijeu" data-module-name="minijeu"><a >Mini Jeu</a></li>
             </ul>
         </nav>
         <ul>
@@ -17,8 +15,6 @@
             <li v-if="messagerie" data-module-name="messagerie"><messagerie-ws-module></messagerie-ws-module></li>
             <li v-if="datas" data-module-name="datas"><datas-module></datas-module></li>
             <li v-if="rtcmodule" data-module-name="rtcmodule"><rtc-module>rtc</rtc-module></li>
-            <li v-if="sharepos" data-module-name="sharepos"><share-position-module></share-position-module></li>
-            <li v-if="minijeu" data-module-name="minijeu"><a >Mini Jeu</a></li>
         </ul>
         </body>
     </div>
@@ -26,9 +22,7 @@
             <button id='btn' @click="creeModule('todolist')">todolist!!</button>
             <button id='btn' @click="creeModule('messagerie')">messagerie!!</button>
             <button id='btn' @click="creeModule('datas')">datas!!</button>
-            <button id='btn' @click="creeModule('rtcmodule')">rtcmodule!!</button>
-            <button id='btn' @click="creeModule('sharepos')">geoloc!!</button>
-            <button id='btn' @click="creeModule('minijeu')">minijeu!!</button>
+            <button id='btn' @click="creeModule('rtcmodule')">video!!</button>
             <button id='btn' @click="envoisApp()">TELECHARGER!!</button>
         </div>
   </section>

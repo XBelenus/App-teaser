@@ -5,39 +5,29 @@
         <nav>
             <ul>
                 <li v-if="todolist" data-module-name="todolist"><a >Todolist</a></li>
-                <li v-if="listeamis" data-module-name="listeamis"><a >Liste amis</a></li>
-                <li v-if="identification" data-module-name="identification"><a >Identification</a></li>
-                <li v-if="photos" data-module-name="photos"><a >Prise de photos</a></li>
-                <li v-if="geoloc" data-module-name="geoloc"><a >Géolocalisation</a></li>
-                <li v-if="echanges" data-module-name="echanges"><a >Echange de fichier</a></li>
-                <li v-if="messagerie" data-module-name="messagerie"><a >Messagerie</a></li>
-                <li v-if="basedd" data-module-name="basedd"><a >BDD invisible</a></li>
+                <li v-if="messagerie" data-module-name="messagerie"><a >messageriedufuture</a></li>
+                <li v-if="datas" data-module-name="datas"><a >DATASMODULE</a></li>
+                <li v-if="rtcmodule" data-module-name="rtcmodule"><a >RTC</a></li>
+                <li v-if="sharepos" data-module-name="sharepos"><a >Géolocalisation</a></li>
                 <li v-if="minijeu" data-module-name="minijeu"><a >Mini Jeu</a></li>
             </ul>
         </nav>
         <ul>
             <li v-if="todolist" data-module-name="todolist"><todo-list></todo-list></li>
-            <li v-if="listeamis" data-module-name="listeamis"><a >Liste amis</a></li>
-            <li v-if="identification" data-module-name="identification"><a >Identification</a></li>
-            <li v-if="photos" data-module-name="photos"><photos-module></photos-module></li>
-            <li v-if="geoloc" data-module-name="geoloc"><a >Géolocalisation</a></li>
-            <li v-if="echanges" data-module-name="echanges"><a >Echange de fichier</a></li>
-            <li v-if="messagerie" data-module-name="messagerie"><a >Messagerie</a></li>
-            <li v-if="basedd" data-module-name="basedd"><a >BDD invisible</a></li>
+            <li v-if="messagerie" data-module-name="messagerie"><messagerie-ws-module></messagerie-ws-module></li>
+            <li v-if="datas" data-module-name="datas"><datas-module></datas-module></li>
+            <li v-if="rtcmodule" data-module-name="rtcmodule"><rtc-module>rtc</rtc-module></li>
+            <li v-if="sharepos" data-module-name="sharepos"><share-position-module></share-position-module></li>
             <li v-if="minijeu" data-module-name="minijeu"><a >Mini Jeu</a></li>
         </ul>
-        <mon-script></mon-script>
         </body>
     </div>
     <div class="options_bar">
             <button id='btn' @click="creeModule('todolist')">todolist!!</button>
-            <button id='btn' @click="creeModule('listeamis')">listeamis!!</button>
-            <button id='btn' @click="creeModule('identification')">identification!!</button>
-            <button id='btn' @click="creeModule('photos')">photos!!</button>
-            <button id='btn' @click="creeModule('geoloc')">geoloc!!</button>
-            <button id='btn' @click="creeModule('echanges')">echanges!!</button>
             <button id='btn' @click="creeModule('messagerie')">messagerie!!</button>
-            <button id='btn' @click="creeModule('basedd')">basedd!!</button>
+            <button id='btn' @click="creeModule('datas')">datas!!</button>
+            <button id='btn' @click="creeModule('rtcmodule')">rtcmodule!!</button>
+            <button id='btn' @click="creeModule('sharepos')">geoloc!!</button>
             <button id='btn' @click="creeModule('minijeu')">minijeu!!</button>
             <button id='btn' @click="envoisApp()">TELECHARGER!!</button>
         </div>
@@ -45,31 +35,28 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import elementsMenu from '~/components/elements_menu.vue'
+import rtcModule from '~/components/rtc_module.vue'
+import messagerieWsModule from '~/components/messagerie_ws_module.vue'
 import todoList from '~/components/todo_list.vue'
-import photosModule from '~/components/photos_module.vue'
-import monScript from '~/components/mon_script.vue'
+import datasModule from '~/components/datas_module.vue'
+import sharePositionModule from '~/components/share_position_module.vue'
 export default {
   components: {
-    Logo,
-    elementsMenu,
+    rtcModule,
+    messagerieWsModule,
     todoList,
-    photosModule,
-    monScript
+    datasModule,
+    sharePositionModule
   },
   data: function () {
     return {
       temp: '',
       todolist: false,
-      listeamis: false,
-      identification: false,
-      photos: false,
-      geoloc: false,
+      datas: false,
+      sharepos: false,
       messagerie: false,
-      basedd: false,
-      minijeu: false,
-      echanges: false
+      rtcmodule: false,
+      minijeu: false
     }
   },
   methods: {
@@ -82,7 +69,7 @@ export default {
     envoisApp () {
       let main = document.querySelector('.is_main').innerHTML
       let owner = prompt('what is your name?', '')
-      let finale = new WebSocket(`ws://192.168.1.222:8986/?channelName=${owner}`)
+      let finale = new WebSocket(`ws://127.0.0.1:3002/?channelName=${owner}`)
       finale.onopen = function () {
         finale.send(main)
       }
@@ -90,7 +77,6 @@ export default {
         console.log(data)
         console.log(data.data)
         if (data.data) {
-          // let fileView = new Uint8Array(data.data)
           let fileBlob = new Blob([data.data], {type: 'application/*'})
           let fileUrl = window.URL.createObjectURL(fileBlob)
           let a = document.createElement('a')

@@ -25,4 +25,6 @@ you can now open your browser and create !!
 
 Have a lot of fun!
 
-from Paris, love & passion ! Enjoy !!
+many thank to NuxtJS, PeerJS and VueJS teams for making this app possible!!
+
+from Paris with love & passion ! Enjoy !!

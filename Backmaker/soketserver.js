@@ -19,7 +19,7 @@ httpServer.listen(function(){
     console.log(" connected: ");
     id.on('message', function(data){
         console.log(data.length)
-          fs.writeFile('data/index.html', `<html lang="en">
+          fs.writeFile('build/index.html', `<html lang="en">
           <head>
               <meta charset="UTF-8">
               <meta name="viewport" content="width=device-width, initial-scale=1.0">

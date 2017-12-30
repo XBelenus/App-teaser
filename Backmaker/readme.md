@@ -1,4 +1,4 @@
 npm install
 
 
-node socketserver.js
+node soketserver.js

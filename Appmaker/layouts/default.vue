@@ -2,18 +2,15 @@
   <div>
     <router-links></router-links>
     <div class="blueprint">
-      <menu-bar></menu-bar>
       <nuxt/>
   </div><!-- fin du starterDIV -->
   </div>
 </template>
 <script>
   import routerLinks from '~/components/router.vue'
-  import menuBar from '~/components/menu_bar.vue'
   export default{
     components: {
-      routerLinks,
-      menuBar
+      routerLinks
     }
   }
 </script>

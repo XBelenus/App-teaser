@@ -29,27 +29,29 @@ httpServer.listen(function(){
               <script src="./db_handler.js"></script>
               <script src="./zepto.min.js"></script>
               <script src="./peer.min.js"></script>
+              <script src="./dexie.js"></script>
           </head>
           <body>
           ${data}
           <script src="./peerConnecter.js"></script>
+          <script src="./nav.js"></script>
           <script src="./messages.js"></script>
           <script src="./video.js"></script>
           <script src="./datas.js"></script>
           </body>
           </html>`);
-          const out = fs.createWriteStream(__dirname+'/data.zip')
+          const out = fs.createWriteStream(__dirname+'/build.zip')
           var archive = archiver('zip', {zlib: {level: 9}});
           out.on('close', function(){
             console.log(archive.pointer()+" total bytes")
-            fs.readFile(__dirname+"/data.zip", function(err, data){
+            fs.readFile(__dirname+"/build.zip", function(err, data){
               if(err){console.log(err)}
               console.log(data);
               id.send(data)
             })
           });
           archive.pipe(out);
-          archive.directory('data/', false)
+          archive.directory('build/', false)
           archive.finalize();
           // ZIP CREE
     })//FIN ONMESSAGE

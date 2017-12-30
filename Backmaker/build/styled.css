@@ -1,0 +1,70 @@
+
+body{
+    max-width: 700px;
+}
+#video-container{
+    display:none;
+}
+.chat_box{
+
+}
+.chat_head{
+
+}
+.drop_box{
+    height: 200px;
+}
+.presence{
+    display: none;
+}
+.you{
+    color:green;
+}
+.theirs{
+    color: blue;
+}
+.status{
+    width:20px;
+    height: 20px;
+    background-color: red;
+    position: absolute;
+    top:0;
+    right:0;
+}
+.peer_selector{
+    
+}
+.files_element{
+    display:none;
+}
+.messagerie_text{
+    height:100vh;
+    display: none;
+}
+.messagerie_text div{
+    height:80%;
+}
+#disconnect_btn{
+    position: absolute;
+    top:0;
+    right:0;
+    display:none;
+}
+.my_video{
+    max-width:150px;
+    max-height:200px;
+    position: fixed;
+    top: 400px;
+    left:250px;
+}
+.their_video{
+    max-width:450px;
+    max-height:600px;
+    position: fixed;
+    top: 50px;
+    left:0;
+}
+ul li{
+    list-style-type: none;
+    display: inline;
+}

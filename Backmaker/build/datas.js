@@ -5,6 +5,7 @@ $(document).ready(function(){
     let dataConnect = $('.datas_module #data_connect');
     let disconnect = $('.datas_module #disconnect');
     let distantIdText = $('.datas_module #distant_id');
+    peer = window.peer;
 //////////////////****************ESTABLISH CONNECTION****************////////////////////
     dataConnect.click(function(){
         distantIdText = distantIdText.val();

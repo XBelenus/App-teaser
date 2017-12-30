@@ -3,6 +3,7 @@ $(document).ready(function(){
     let dataConnect = $('.messagerie_ws_module #data_connect');
     let disconnect = $('.messagerie_ws_module #disconnect_btn');
     let distantIdText = $('.messagerie_ws_module #distant_id');
+    peer = window.peer;
 //////////////////****************ESTABLISH CONNECTION****************////////////////////
     dataConnect.click(function(){
         distantIdText = distantIdText.val();

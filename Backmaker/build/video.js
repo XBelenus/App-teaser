@@ -2,6 +2,7 @@ $(document).ready(function(){
     let dataConnect = $('.rtc_module #data_connect');
     let disconnect = $('.rtc_module #disconnect_btn');
     let distantIdText = $('.rtc_module #distant_id');
+    peer = window.peer;
 //////////////////****************ESTABLISH CONNECTION****************////////////////////
     dataConnect.click(function(){
         distantIdText = distantIdText.val();

@@ -4,13 +4,13 @@
         <body>
         <nav>
             <ul>
-                <li v-if="todolist" data-module-name="todolist"><a >Todolist</a></li>
-                <li v-if="messagerie" data-module-name="messagerie"><a >messageriedufuture</a></li>
-                <li v-if="datas" data-module-name="datas"><a >DATASMODULE</a></li>
-                <li v-if="rtcmodule" data-module-name="rtcmodule"><a >RTC</a></li>
+                <li v-if="todolist" data-module-name="todolist"><a data-module-name="todolist">TODOLIST</a></li>
+                <li v-if="messagerie" data-module-name="messagerie"><a data-module-name="messagerie">MESSENGER MODULE</a></li>
+                <li v-if="datas" data-module-name="datas"><a data-module-name="datas">DATAS MODULE</a></li>
+                <li v-if="rtcmodule" data-module-name="rtcmodule"><a data-module-name="rtcmodule">RTC MODULE</a></li>
             </ul>
         </nav>
-        <ul>
+        <ul class="body_ul">
             <li v-if="todolist" data-module-name="todolist"><todo-list></todo-list></li>
             <li v-if="messagerie" data-module-name="messagerie"><messagerie-ws-module></messagerie-ws-module></li>
             <li v-if="datas" data-module-name="datas"><datas-module></datas-module></li>
